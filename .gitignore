@@ -39,5 +39,5 @@ vignettes/*.pdf
 .Renviron
 renv/
 
-.Rproj
+*.Rproj
 .Rprofile
