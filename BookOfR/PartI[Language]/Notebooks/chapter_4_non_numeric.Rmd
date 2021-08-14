@@ -816,25 +816,16 @@ Useful for categorical data
 
 Data:
 
-+----------+----------+----------------+
-| Person   | Sex      | Month of Birth |
-+==========+==========+================+
-| Liz      | Female   | April          |
-+----------+----------+----------------+
-| Jolene   | Female   | January        |
-+----------+----------+----------------+
-| Susan    | Female   | December       |
-+----------+----------+----------------+
-| Boris    | Male     | September      |
-+----------+----------+----------------+
-| Rochelle | Female   | November       |
-+----------+----------+----------------+
-| Tim      | Male     | July           |
-+----------+----------+----------------+
-| Simon    | Male     | July           |
-+----------+----------+----------------+
-| Amy      | Female   | June           |
-+----------+----------+----------------+
+| Person   | Sex    | Month of Birth |
+|----------|--------|----------------|
+| Liz      | Female | April          |
+| Jolene   | Female | January        |
+| Susan    | Female | December       |
+| Boris    | Male   | September      |
+| Rochelle | Female | November       |
+| Tim      | Male   | July           |
+| Simon    | Male   | July           |
+| Amy      | Female | June           |
 
 Save names as a vector
 
@@ -1087,7 +1078,7 @@ party.fac[sex.fac == 'M']
 sex.fac[party.fac == 'National']
 ```
 
-### (d) Another six people: 
+### (d) Another six people:
 
 -   `c("National", "Maori", "Maori", "Labour", "Greens", "Labour")`
 
