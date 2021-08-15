@@ -48,7 +48,7 @@ Can then load file in using `read.table()`
 
 ```{r}
 my_data_file <- read.table(
-                            file='../data/mydatafile.txt',
+                            file='./data/mydatafile.txt',
                             header=TRUE,
                             sep=" ",
                             na.strings="*",
@@ -60,7 +60,7 @@ my_data_file
 `file` keyword will use linux style file paths, can use `list.files()` like `ls`
 
 ```{r}
-list.files("../data")
+list.files("./data")
 ```
 
 `file.choose()` will open a file explorer, and return the correctly formatted file path string
@@ -87,7 +87,7 @@ Then use `read.csv()` to load data in
 
 ```{r}
 spread <- read.csv(
-                file='../data/spreadsheetfile.csv', 
+                file='./data/spreadsheetfile.csv', 
                 header=FALSE, 
                 stringsAsFactors=TRUE
                 )
@@ -121,7 +121,7 @@ Write data to file using `write.table()`
 ```{r}
 write.table(
             x=my_data_file,
-            file="../output/somenewfile.txt",
+            file="./output/somenewfile.txt",
             sep="@",
             na="??",
             quote=FALSE,
@@ -137,7 +137,7 @@ Create *.jpeg* files using the `jpeg()` object graphics device
 
 ```{r}
 jpeg(
-    filename="../output/myjpegplot.jpeg",
+    filename="./output/myjpegplot.jpeg",
     width=600,
     height=600
     )
@@ -156,7 +156,7 @@ Need to call `dev.off()` to finish plot and write file
 Create *.pdf* with `pdf()` objects
 
 ```{r}
-pdf(file="../output/mypdfplot.pdf", width=5, height=5)
+pdf(file="./output/mypdfplot.pdf", width=5, height=5)
 plot(
     1:5, 6:10,
     ylab="a nice ylab",
@@ -183,7 +183,7 @@ qplot(foo, bar, geom='blank')
 ```
 
 ```{r}
-ggsave(filename='../output/mypngplot.png')
+ggsave(filename='./output/mypngplot.png')
 ```
 
 # 8.4 Ad-Hoc Object Read/Write Operations
@@ -210,13 +210,13 @@ somelist
 Use of `dput()` to write R-objects
 
 ```{r}
-dput(x=somelist, file='../output/myRobject.txt')
+dput(x=somelist, file='./output/myRobject.txt')
 ```
 
 Then use `dget()` to retrieve object from file
 
 ```{r}
-new_object <- dget(file='../output/myRobject.txt')
+new_object <- dget(file='./output/myRobject.txt')
 new_object
 ```
 
@@ -230,7 +230,7 @@ new_object
 q5 <- quakes[quakes$mag >= 5, ]
 write.table(
             q5, 
-            '../output/q5.txt', 
+            './output/q5.txt', 
             sep='!', 
             quote=FALSE, 
             row.names=FALSE
@@ -241,7 +241,7 @@ write.table(
 
 ```{r}
 q5.dframe <- read.table(
-                        '../output/q5.txt', 
+                        './output/q5.txt', 
                         header=TRUE, 
                         sep='!', 
                         stringsAsFactors=FALSE
@@ -286,7 +286,7 @@ points(
 #### (ii) Add a legend explaining the differences, then save a \$500 \\times 500\$ pixel .png file
 
 ```{r}
-png('../output/8_1_b.png', width=500, height=500)
+png('./output/8_1_b.png', width=500, height=500)
 
 plot(
     x, y, 
@@ -331,13 +331,13 @@ exer <- list(quakes=quakes, q5.dframe=q5.dframe, Duncan=Duncan)
 #### (i) Write the list to disk, called *`Exercise8-1.txt`*
 
 ```{r}
-dput(exer, '../output/Exercise8-1.txt')
+dput(exer, './output/Exercise8-1.txt')
 ```
 
 #### (ii) Read *`Exercise8-1.txt`*, call the result `list.of.dataframes`
 
 ```{r}
-list.of.dataframes <- dget('../output/Exercise8-1.txt')
+list.of.dataframes <- dget('./output/Exercise8-1.txt')
 names(list.of.dataframes)
 ```
 
@@ -379,7 +379,7 @@ qplot(x, y, color=ptype, shape=ptype)
 
 ```{r}
 ggsave(
-        filename='../output/Section7-4-3.tiff', 
+        filename='./output/Section7-4-3.tiff', 
         width=180, 
         height=150, 
         units='mm'
